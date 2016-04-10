@@ -4,16 +4,13 @@ import com.Roshambo.RoshamboEnum.RoshamboTypes;
 
 //Player 2 - Random
 
-public abstract class Bianca implements TalkToPlayer {
+public class bianca extends APlayer {
 
-	@Override
-	public void bianca(String name, RoshamboTypes choice){
-		name = "Bianca";
-		choice = RoshamboGenerator.getTheRandNo();
+	public bianca(String userName, RoshamboTypes userThrowEnum) {
+		super(userName, userThrowEnum);
+		setName("Bianca");
+		setChoice(RoshamboGenerator.getTheRandNo());
 	}
-
-	public void nick(String name, RoshamboTypes choice) {
-		// TODO Auto-generated method stub
-		
-	}
+	
+	
 }

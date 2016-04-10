@@ -2,10 +2,13 @@ package com.Roshambo;
 
 import com.Roshambo.RoshamboEnum.RoshamboTypes;
 
-public abstract class User implements TalkToPlayer {
+public class User extends APlayer {
 
-	@Override
-	public void user(String name, RoshamboTypes choice){
-		
+	public User(String userName, RoshamboTypes userThrowEnum) {
+		super(userName, userThrowEnum);
+		// TODO Auto-generated constructor stub
 	}
+	
+
 }
+

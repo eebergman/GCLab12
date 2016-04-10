@@ -2,14 +2,14 @@ package com.Roshambo;
 
 import com.Roshambo.RoshamboEnum.RoshamboTypes;
 
-//Player 3 - inherits from Bianca class
+public class nick extends APlayer {
 
-public abstract class Nick extends Bianca {
-
-	@Override
-	public void nick(String name, RoshamboTypes choice){
-		name = "Nick";
-		choice = RoshamboGenerator.getTheRandNo();
+	public nick(String userName, RoshamboTypes userThrowEnum) {
+		super(userName, userThrowEnum);
+		setName("Nick");
+		setChoice(RoshamboGenerator.getTheRandNo());
 	}
-
+	
+	
+	
 }

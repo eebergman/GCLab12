@@ -4,11 +4,13 @@ import com.Roshambo.RoshamboEnum.RoshamboTypes;
 
 //Player 1 - Only Chooses Rock
 
-public abstract class Chelsea implements TalkToPlayer {
+public class chelsea extends APlayer {
 
-	@Override
-	public void chelsea(String name, RoshamboTypes choice) {
-		name = "Chelsea";
-		choice = RoshamboTypes.rock;
+	public chelsea(String userName, RoshamboTypes userThrowEnum) {
+		super(userName, userThrowEnum);
+		setName("Chelsea");
+		setChoice(RoshamboTypes.rock);
 	}
+	
+	
 }

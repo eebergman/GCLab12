@@ -37,6 +37,7 @@ public class Validator extends RoshamboApp {
 			break;
 		case "s":
 			isItValid = RoshamboTypes.scissors;
+			break;
 		default:
 			isItValid = null;
 		}

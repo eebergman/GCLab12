@@ -8,6 +8,8 @@ import com.Roshambo.RoshamboEnum.RoshamboTypes;
 public class RoshamboApp {
 
 	public static void main(String[] args) {
+		
+		
 		Scanner sc = new Scanner(System.in);
 		String stayOrGo = null;
 		@SuppressWarnings("unused")
@@ -18,6 +20,7 @@ public class RoshamboApp {
 		String opponentValid;
 		String isOppVal;
 		String oppName = null;
+		APlayer opponent = null;
 		RoshamboTypes oppThrowEnum = null;
 		RoshamboTypes userThrowEnum;
 
@@ -40,23 +43,43 @@ public class RoshamboApp {
 			userThrowEnum = Validator.playerThrow(userThrow = sc.nextLine());
 			throwOfUser.add(userThrowEnum);
 
-		TypesOfPlayer playerUser = new TypesOfPlayer(userName, userThrowEnum);
+		User playerUser = new User(userName, userThrowEnum);
 		
-//		System.out.println(playerUser.getName(userName));  		 //to print user name
-//		System.out.println(playerUser.getChoice(userThrowEnum)); //to print user choice
+		System.out.println(playerUser.getName());  		 //to print user name
+		System.out.println(playerUser.getChoice(userThrowEnum)); //to print user choice
 		
-		System.out.println("Welcome " + playerUser.getName(userName) + " I have three opponents "
+		
+		
+		
+		System.out.println("Welcome " + playerUser.getName() + " I have three opponents "
 				+ "for you to challenge."
 				+ "\n\tPress 'B' for Bianca"
 				+ "\n\tPress 'C' for Chelsea"
 				+ "\n\tPress 'N' for Nick");
 		opponentValid = Validator.verifyOpponent(isOppVal = sc.nextLine());
 		
-		TypesOfPlayer playerOpp = 
+		switch (opponentValid){
+		case "b":
+			opponent = new bianca(null, null);
+			break;
+		case "c":
+			opponent = new chelsea(null, null);
+			break;
+		default:
+			opponent = new nick(null, null);
+			break;
+		}
 		
-		System.out.println(playerOpp.getName(userName));
-		System.out.println(playerOpp.getChoice(userThrowEnum));
+		System.out.println(opponent.getName());
+		System.out.println(opponent.getChoice(null));
 		
+//		
+//		
+////		TypesOfPlayer playerOpp = 
+//		
+////		System.out.println(playerOpp.getName(userName));
+////		System.out.println(playerOpp.getChoice(userThrowEnum));
+//		
 		}
 		sc.close();
 	}
